@@ -14,21 +14,6 @@ This solution uses:
 
 ---
 
-## Architecture
-
-```
-User Leaves Organization → LCW Leaver Workflow → Custom Extension → Logic App
-                                                                        ↓
-                                                              Managed Identity
-                                                                        ↓
-                                                    Inbound API Provisioning Service
-                                                                        ↓
-                                                      Disable Privileged Account
-```
-
----
-
-
 ### Why Use API Provisioning Service for Admin Account Offboarding?
 
 Using the Inbound API Provisioning Service for privileged account offboarding offers several advantages:
