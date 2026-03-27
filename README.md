@@ -1,66 +1,92 @@
-# 📘 Custom Extensions in Entra Identity Governance
+# Custom Extensions in Entra Identity Governance
+
+Custom extensions allow you to inject **external logic** into Microsoft Entra Identity Governance workflows. They enable scenarios that go beyond native capabilities by calling out to your own systems, APIs, or business logic at key points in the identity lifecycle.
+
+---
 
 ## What Is a Custom Extension?
 
-A **custom extension** in Microsoft Entra Identity Governance enables you to integrate external logic or services into governance workflows.
+A **custom extension** is an integration point that allows Entra Identity Governance to invoke external services during governance workflows.
 
-Custom extensions allow you to:
+With custom extensions, you can:
 
-- Invoke external APIs or services during identity lifecycle events  
-- Implement business-specific rules beyond built-in capabilities  
-- Extend governance workflows to meet unique organizational requirements  
+- Execute external logic during identity lifecycle events  
+- Integrate with systems that are not natively supported  
+- Enforce organization-specific policies and controls  
+- Extend governance workflows without modifying core platform behavior  
 
-Think of custom extensions as **hooks** that let you plug your own logic into Entra Identity Governance workflows.
-
----
-
-## 🔄 Custom Extensions in Lifecycle Workflows
-
-Lifecycle workflows automate identity-related processes such as onboarding, offboarding, and role changes.  
-Custom extensions enhance these workflows by enabling external integrations and automation.
-
-### Common Scenarios
-
-Custom extensions can be used to:
-
-- Trigger external processes when a user joins, leaves, or changes roles  
-- Notify third-party systems (HR, ITSM, ticketing platforms)  
-- Enforce organization-specific compliance checks  
-- Automate provisioning or deprovisioning in non-native systems  
-
-### Example Use Cases
-
-- Send a welcome package request to HR when a new employee is onboarded  
-- Disable accounts in a legacy system during offboarding via an external API  
-- Update physical badge access when a user changes departments  
+Conceptually, custom extensions act as **event-driven hooks** that allow Entra to delegate decisions or actions to your own services.
 
 ---
 
-## 🎟️ Custom Extensions in Entitlement Management
+## Where Custom Extensions Are Used
 
-Entitlement Management helps govern access packages and approvals.  
-Custom extensions add flexibility by integrating external systems and enforcing additional business logic.
+Custom extensions are primarily used in two areas of Entra Identity Governance:
 
-### Common Scenarios
+- **Lifecycle Workflows**
+- **Entitlement Management**
 
-Custom extensions can be used to:
+Each serves a different purpose but follows the same core principle: extending governance decisions beyond Microsoft Entra.
 
-- Perform external approval or risk checks before granting access  
-- Notify third-party systems when access is granted or revoked  
-- Log entitlement decisions in external audit or compliance systems  
-- Enforce custom business rules beyond native policies  
+---
 
-### Example Use Cases
+## Lifecycle Workflows
 
-- Require an external compliance or risk check before approving access to sensitive applications  
+Lifecycle workflows automate identity-related processes such as onboarding, offboarding, and job changes.  
+Custom extensions allow these workflows to interact with external systems at specific stages.
+
+### What You Can Do
+
+Using custom extensions in lifecycle workflows, you can:
+
+- Trigger downstream processes when users join, leave, or change roles  
+- Notify HR, ITSM, or ticketing platforms of lifecycle events  
+- Apply custom compliance or validation checks  
+- Provision or deprovision access in legacy or non-native systems  
+
+### Example Scenarios
+
+- Send a request to HR to prepare onboarding materials for a new employee  
+- Disable accounts in a legacy application during offboarding  
+- Update physical access or badge systems when a user changes departments  
+
+---
+
+## Entitlement Management
+
+Entitlement Management governs access packages, approvals, and access reviews.  
+Custom extensions allow you to introduce **external decision-making and auditing** into these access flows.
+
+### What You Can Do
+
+With custom extensions in Entitlement Management, you can:
+
+- Perform external risk or compliance checks before granting access  
+- Notify third-party systems when access is approved or revoked  
+- Record entitlement decisions in external audit or logging systems  
+- Enforce business rules that are not supported by built-in policies  
+
+### Example Scenarios
+
+- Require a risk assessment from an external system before approving access to sensitive resources  
 - Notify a custom management system when an access package is assigned  
-- Record entitlement decisions in a custom database for audit purposes  
+- Log access decisions to an external database for compliance and audit purposes  
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-1. Review the template examples in this repository  
-2. Adapt them to your organization’s requirements  
-3. Test thoroughly in **non-production environments**  
-4. Do **not** use these templates directly in production without proper validation and security review  
+1. Review the sample templates provided in this repository  
+2. Adapt the templates to match your organization’s requirements  
+3. Test all extensions thoroughly in **non-production environments**  
+4. Do **not** deploy directly to production without security review and validation  
+
+---
+
+## Key Considerations
+
+- Custom extensions run **outside** of Entra — availability and reliability depend on your external services  
+- Failures in external logic can impact governance workflows  
+- Proper authentication, authorization, and logging are critical  
+
+Design custom extensions with **resilience, security, and observability** in mind.
