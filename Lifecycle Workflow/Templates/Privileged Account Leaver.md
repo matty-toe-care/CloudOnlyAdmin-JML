@@ -485,24 +485,33 @@ New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrinc
 
 ```
 
-## Part 5: Creating the Leaver Lifecycle Workflow
+## Part 5: Creating the Leaver Lifecycle Workflows
 
-### Step 1: Navigate to Lifecycle Workflows
+We want to address 2 leaver secenarios with 2 separate workflows.
+
+**Scenario 1:** Users' access package assignement expires and is not renewed.
+
+**Scenario 2:** User has been offboarded.
+
+These scenarios can work in parallel.
+
+### Scenario 1 Lifecycle Workflow
+<!-- #### Step 1: Navigate to Lifecycle Workflows
 
 1. In **Entra ID Admin Center**, go to **Identity Governance** → **Lifecycle Workflows**
 2. Click **Workflows**
 3. Click **New workflow**
 
-### Step 2: Configure Workflow Basics
+#### Step 2: Configure Workflow Basics
 
 1. **Category**: Select **Leaver**
 2. **Name**: Enter `Privileged Account Offboarding`
 3. **Description**: Enter `Disables and offboards privileged admin accounts when users leave`
 4. Click **Next**
 
-### Step 3: Configure Execution Conditions
+#### Step 3: Configure Execution Conditions
 
-#### Trigger Configuration
+##### Trigger Configuration
 
 1. **Trigger type**: Select one of the following:
    - **Employee leaves the organization** (triggered by `employeeLeaveDateTime`)
@@ -514,7 +523,7 @@ New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrinc
    - For account disable: Execute immediately
    - For group removal: Execute within 1 hour
 
-#### Scope Configuration
+##### Scope Configuration
 
 1. **Scope**: Select users with privileged accounts
 2. **Rule expression**: Add rule to target only privileged account holders
@@ -522,9 +531,9 @@ New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrinc
    - Or: Member of group "Privileged-Account-Holders"
 3. Click **Next**
 
-### Step 4: Configure Tasks
+#### Step 4: Configure Tasks
 
-#### Custom Extension Task
+##### Custom Extension Task
 
 1. Click **Add task** → **Custom tasks**
 2. Select your custom extension: `Admin-Account-Leaver-Extension`
@@ -534,18 +543,19 @@ New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrinc
 6. Click **Add**
 7. Click **Next**
 
-### Step 5: Review and Create
+#### Step 5: Review and Create
 
 1. Review the workflow configuration
 2. **Enable workflow**: Toggle to **Yes** to activate immediately (or **No** for testing)
 3. Click **Create**
 
-### Step 6: Test the Workflow
+#### Step 6: Test the Workflow
 
-#### Run On-Demand
+##### Run On-Demand
 
 1. Navigate to **Lifecycle Workflows** → **Workflows** → **Privileged Account Offboarding**
 2. Click **Run on demand**
 3. Select a test user
 4. Click **Run workflow**
 5. Monitor execution in **Workflow history**
+-->
