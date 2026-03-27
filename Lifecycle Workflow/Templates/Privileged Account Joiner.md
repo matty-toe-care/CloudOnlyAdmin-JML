@@ -58,7 +58,6 @@ User Joins Organization → LCW Joiner Workflow → Custom Extension → Logic A
 1. Review the configuration summary:
    - Custom extension name
    - Target Logic App details
-   - Authentication method (will be configured next)
 2. Click **Create**
 
 ### Step 5: Verify Logic App Creation
@@ -656,3 +655,14 @@ For this custom extension to work, the managed identity needs:
 
 1. **SynchronizationData-User.Upload**: To send user data to the Inbound API Provisioning Service
 2. **AuditLog.Read.All**: To read audit logs for verification and troubleshooting
+
+## Part 5 : Create Lifecycle Workflow
+
+1. In the Entra Portal, navogate to **ID Governance** → **Lifecycle Workflows** → **Create workflow**
+2. Select **Post-Onboarding of an employee** template
+3. Name it **Privileged Account Onboarding**
+4. For Trigger Details, it's recommended to use **Group Membership Changes** using a group assigned to an access package which has it's own approval workflow and hit **Next**
+5. Add said group to scope in **Configure Scope** and hit **Next**
+6. Remove all default tasks and click **Add Task** and select **Run a Custom Task Extension**
+7. Select the Custom Task Extension and give it a name and select **Admin-Account-Joiner-Extension** and click **Save**
+8. In Review + create, **Enable schedule** and click **Create**
