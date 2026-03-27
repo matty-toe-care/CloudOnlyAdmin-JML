@@ -27,8 +27,6 @@ Custom extensions can be used to:
 - Call an external API to disable accounts in a legacy system during offboarding.  
 - Trigger a workflow to update a badge access system when a user changes departments.
 
-**📖 [View Lifecycle Workflow Custom Extensions Guide](./LifeCycle%20Workflow/LifeCycle%20Workflow%20Directory.md)**  
-
 ---
 
 ## 🎟️ Using Custom Extensions in Entitlement Management
@@ -46,8 +44,6 @@ Custom extensions can enhance this by:
 - Require an external risk check before approving access to sensitive applications.  
 - Notify a manager via a custom system when an access package is assigned.  
 - Record entitlement decisions in a custom database for audit purposes.
-
-**📖 [View Entitlement Management Custom Extensions Guide](./Entitlement%20Management/Entitlement%20Management%20Directory.md)**  
 
 ---
 
