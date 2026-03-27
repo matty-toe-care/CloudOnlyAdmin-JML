@@ -1,55 +1,66 @@
-## 📘 What is a Custom Extension?
+# 📘 Custom Extensions in Entra Identity Governance
 
-A **custom extension** in Entra Identity Governance is a way to integrate external logic or services into governance workflows.  
-They allow you to:  
+## What Is a Custom Extension?
 
-- Call external APIs or services during identity lifecycle events.  
-- Add business-specific rules or automation beyond built-in capabilities.  
-- Provide flexibility for unique organizational requirements.  
+A **custom extension** in Microsoft Entra Identity Governance enables you to integrate external logic or services into governance workflows.
 
-Think of them as "hooks" that let you extend Entra workflows with your own logic.
+Custom extensions allow you to:
 
----
+- Invoke external APIs or services during identity lifecycle events  
+- Implement business-specific rules beyond built-in capabilities  
+- Extend governance workflows to meet unique organizational requirements  
 
-## 🔄 Using Custom Extensions in Lifecycle Workflows
-
-Lifecycle workflows in Entra Identity Governance automate identity-related tasks such as onboarding, offboarding, and role changes.  
-Custom extensions can be used to:  
-
-- Trigger external processes when a user joins, leaves, or changes roles.  
-- Notify third-party systems (e.g., HR, ITSM, or ticketing platforms).  
-- Enforce organization-specific compliance checks.  
-- Automate provisioning/deprovisioning in non-native systems.  
-
-**Example Use Cases:**  
-
-- Automatically send a welcome package request to HR when a new employee is onboarded.  
-- Call an external API to disable accounts in a legacy system during offboarding.  
-- Trigger a workflow to update a badge access system when a user changes departments.
+Think of custom extensions as **hooks** that let you plug your own logic into Entra Identity Governance workflows.
 
 ---
 
-## 🎟️ Using Custom Extensions in Entitlement Management
+## 🔄 Custom Extensions in Lifecycle Workflows
 
-Entitlement Management in Entra Identity Governance helps manage access packages and approvals.  
-Custom extensions can enhance this by:  
+Lifecycle workflows automate identity-related processes such as onboarding, offboarding, and role changes.  
+Custom extensions enhance these workflows by enabling external integrations and automation.
 
-- Adding external approval logic (e.g., checking a compliance system before granting access).  
-- Sending notifications to external systems when access is granted or revoked.  
-- Logging entitlement decisions into third-party audit systems.  
-- Enforcing additional business rules beyond built-in policies.  
+### Common Scenarios
 
-**Example Use Cases:**  
+Custom extensions can be used to:
 
-- Require an external risk check before approving access to sensitive applications.  
-- Notify a manager via a custom system when an access package is assigned.  
-- Record entitlement decisions in a custom database for audit purposes.
+- Trigger external processes when a user joins, leaves, or changes roles  
+- Notify third-party systems (HR, ITSM, ticketing platforms)  
+- Enforce organization-specific compliance checks  
+- Automate provisioning or deprovisioning in non-native systems  
+
+### Example Use Cases
+
+- Send a welcome package request to HR when a new employee is onboarded  
+- Disable accounts in a legacy system during offboarding via an external API  
+- Update physical badge access when a user changes departments  
+
+---
+
+## 🎟️ Custom Extensions in Entitlement Management
+
+Entitlement Management helps govern access packages and approvals.  
+Custom extensions add flexibility by integrating external systems and enforcing additional business logic.
+
+### Common Scenarios
+
+Custom extensions can be used to:
+
+- Perform external approval or risk checks before granting access  
+- Notify third-party systems when access is granted or revoked  
+- Log entitlement decisions in external audit or compliance systems  
+- Enforce custom business rules beyond native policies  
+
+### Example Use Cases
+
+- Require an external compliance or risk check before approving access to sensitive applications  
+- Notify a custom management system when an access package is assigned  
+- Record entitlement decisions in a custom database for audit purposes  
 
 ---
 
 ## 🚀 Getting Started
 
-1. Browse the template examples in this repository.  
-2. Adapt them to your organization's needs.  
-3. Test thoroughly in **non-production environments**.  
-4. Do not use these templates directly in production without proper validation.  
+1. Review the template examples in this repository  
+2. Adapt them to your organization’s requirements  
+3. Test thoroughly in **non-production environments**  
+4. Do **not** use these templates directly in production without proper validation and security review  
