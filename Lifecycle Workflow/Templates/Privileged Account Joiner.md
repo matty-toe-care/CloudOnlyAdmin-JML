@@ -27,6 +27,16 @@ User Joins Organization → LCW Joiner Workflow → Custom Extension → Logic A
 ```
 
 ---
+### Setting Up the Inbound API Provisioning Application
+
+>[!Note]
+> Please refer to the 📄 **[Create Inbound Provisioning API](../Create%20Inbound%20Provisioning%20API.md)** for inbound API provisioning setup 
+
+>[!Important]
+> The API provisioning will only work on the privilege accounts that are in an eligible state. If the active account has an assigned access on credentials check out, the custom extension will need higher privilege and cannot use the API provisioning service.
+
+
+---
 ## Part 1: Creating a Blank Custom Extension for Lifecycle Workflows
 
 ### Step 1: Navigate to Lifecycle Workflows
