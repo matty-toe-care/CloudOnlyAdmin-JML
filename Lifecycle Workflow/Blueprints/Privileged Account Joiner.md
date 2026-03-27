@@ -13,20 +13,6 @@ This solution uses:
 - **Managed Identity** for secure, credential-free authentication
 
 ---
-
-## Architecture
-
-```
-User Joins Organization → LCW Joiner Workflow → Custom Extension → Logic App
-                                                                        ↓
-                                                              Managed Identity
-                                                                        ↓
-                                                    Inbound API Provisioning Service
-                                                                        ↓
-                                                        Create Privileged Account
-```
-
----
 ### Setting Up the Inbound API Provisioning Application
 
 >[!Note]
