@@ -1,1 +1,46 @@
 # CloudOnlyAdmin-JML
+
+What is a Custom Extension?
+A custom extension in Entra Identity Governance is a way to integrate external logic or services into governance workflows.
+They allow you to:
+
+Call external APIs or services during identity lifecycle events.
+Add business-specific rules or automation beyond built-in capabilities.
+Provide flexibility for unique organizational requirements.
+Think of them as "hooks" that let you extend Entra workflows with your own logic.
+
+🔄 Using Custom Extensions in Lifecycle Workflows
+Lifecycle workflows in Entra Identity Governance automate identity-related tasks such as onboarding, offboarding, and role changes.
+Custom extensions can be used to:
+
+Trigger external processes when a user joins, leaves, or changes roles.
+Notify third-party systems (e.g., HR, ITSM, or ticketing platforms).
+Enforce organization-specific compliance checks.
+Automate provisioning/deprovisioning in non-native systems.
+Example Use Cases:
+
+Automatically send a welcome package request to HR when a new employee is onboarded.
+Call an external API to disable accounts in a legacy system during offboarding.
+Trigger a workflow to update a badge access system when a user changes departments.
+📖 View Lifecycle Workflow Custom Extensions Guide
+
+🎟️ Using Custom Extensions in Entitlement Management
+Entitlement Management in Entra Identity Governance helps manage access packages and approvals.
+Custom extensions can enhance this by:
+
+Adding external approval logic (e.g., checking a compliance system before granting access).
+Sending notifications to external systems when access is granted or revoked.
+Logging entitlement decisions into third-party audit systems.
+Enforcing additional business rules beyond built-in policies.
+Example Use Cases:
+
+Require an external risk check before approving access to sensitive applications.
+Notify a manager via a custom system when an access package is assigned.
+Record entitlement decisions in a custom database for audit purposes.
+📖 View Entitlement Management Custom Extensions Guide
+
+🚀 Getting Started
+Browse the template examples in this repository.
+Adapt them to your organization's needs.
+Test thoroughly in non-production environments.
+Do not use these templates directly in production without proper validation.
