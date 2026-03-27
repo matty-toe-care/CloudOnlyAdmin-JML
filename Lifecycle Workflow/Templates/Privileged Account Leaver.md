@@ -105,7 +105,6 @@ Using the Inbound API Provisioning Service for privileged account offboarding of
 Your Logic App JSON should follow this structure:
 
 ```
-
 {
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
@@ -247,7 +246,7 @@ Your Logic App JSON should follow this structure:
                 },
                 "type": "Http",
                 "inputs": {
-                    "uri": "https://graph.microsoft.com/v1.0/users/@{triggerBody()?['data']?['subject']?['userPrincipalName']}?$select=displayName,onPremisesExtensionAttributes",
+                    "uri": "https://graph.microsoft.com/v1.0/users/@{triggerBody()?['data']?['subject']?['userPrincipalName']}?$select=displayName,otherMails",
                     "method": "GET",
                     "authentication": {
                         "type": "ManagedServiceIdentity",
@@ -270,17 +269,21 @@ Your Logic App JSON should follow this structure:
                 "inputs": {
                     "content": "@body('Get_Linked_account')",
                     "schema": {
+                        "type": "object",
                         "properties": {
-                            "onPremisesExtensionAttributes": {
-                                "properties": {
-                                    "extensionAttribute15": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "otherMails": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
                             }
-                        },
-                        "type": "object"
+                        }
                     }
                 }
             },
@@ -292,7 +295,7 @@ Your Logic App JSON should follow this structure:
                 },
                 "type": "Http",
                 "inputs": {
-                    "uri": "https://graph.microsoft.com/v1.0/users/@{body('Parse_User_attributes')?['onPremisesExtensionAttributes']?['extensionAttribute15']}?$select=displayname,employeeId",
+                    "uri": "https://graph.microsoft.com/v1.0/users/@{string(first(body('Parse_User_attributes')?['otherMails']))}?$select=userPrincipalName,displayname,employeeId",
                     "method": "GET",
                     "authentication": {
                         "type": "ManagedServiceIdentity",
@@ -382,7 +385,7 @@ Your Logic App JSON should follow this structure:
                         {
                             "name": "APIURL",
                             "type": "string",
-                            "value": "https://graph.microsoft.com/v1.0/servicePrincipals/ramndomnumbers/synchronization/jobs/API2AAD.aaaaaaaaaaaaaaaaaaaaa.1111111111111111111111/bulkUpload"
+                            "value": "https://graph.microsoft.com/v1.0/servicePrincipals/7d387c22-d8cd-4b16-8751-3c4a991e934e/synchronization/jobs/API2AAD.6a0ea242e1764bcc99c37e72678ac6e3.62d969c2-1fbf-4817-b36b-901598b54762/bulkUpload"
                         }
                     ]
                 }
